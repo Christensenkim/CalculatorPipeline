@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Services;
+using System.Collections;
 
 namespace Tests
 {
@@ -43,32 +45,70 @@ namespace Tests
         [Test]
         public void SubtractNumbersWithNoInput()
         {
-            //test
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+
+            //Act
+            var result = calc.Subtract();
+
+            //Assert
+            Assert.AreEqual(0, result);
         }
 
         [Test]
         public void SubtractTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { 2.5, 3.5 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(1, result);
         }
 
         [Test]
         public void SubtractTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { -2.5, -3.5 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(-6, result);
         }
 
         [Test]
         public void SubtractThreePositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { 10.5, 2.5, 5.0 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(3, result);
         }
 
         [Test]
         public void SubtractThreeNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { -10.5, -2.5, -5.0 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(-18, result);
         }
 
         [Test]
