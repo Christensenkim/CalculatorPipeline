@@ -27,7 +27,22 @@ namespace Services
 
         public double Factorial(double number)
         {
-            throw new NotImplementedException();
+            if (number >= 18)
+            {
+                throw new ArgumentOutOfRangeException("", "Factorial over 18 cannot be handled");
+            }
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException("", "Factorial of minus numbers cannot be handled");
+            }
+            int i, fact = 1;
+
+            for (i = 1; i <= number; i++)
+            {
+                fact = fact * i;
+            }
+
+            return fact;
         }
     }
 }
