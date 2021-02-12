@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Services;
+using System;
 
 namespace Tests
 {
@@ -73,31 +75,58 @@ namespace Tests
         [Test]
         public void MultiplyNumbersWithNoInput()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator cal = new Calculator();
+
+            var ex = Assert.Throws<Exception>(() => cal.Multiply());
         }
         
         [Test]
         public void MultiplyTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator cal = new Calculator();
+
+            double[] numList = { 2, 2 };
+
+            var result = cal.Multiply(numList);
+
+            Assert.IsTrue(4 == result);
+
         }
 
         [Test]
         public void MultiplyTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator cal = new Calculator();
+
+            double[] numList = { -2, -2 };
+
+            var result = cal.Multiply(numList);
+
+            Assert.IsTrue(-4 == result);
         }
 
         [Test]
         public void MultiplyThreePositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator cal = new Calculator();
+
+            double[] numList = { 2, 2, 1 };
+
+            var result = cal.Multiply(numList);
+
+            Assert.IsTrue(4 == result);
         }
 
         [Test]
         public void MultiplyThreeNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator cal = new Calculator();
+
+            double[] numList = { -2, -2, -1 };
+
+            var result = cal.Multiply(numList);
+
+            Assert.IsTrue(-4 == result);
         }
 
         [Test]
