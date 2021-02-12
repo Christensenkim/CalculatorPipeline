@@ -108,6 +108,8 @@ namespace Tests
         [Test]
         public void MultiplyThreePositiveNumbers()
         {
+
+
             Calculator cal = new Calculator();
 
             double[] numList = { 2, 2, 1 };
