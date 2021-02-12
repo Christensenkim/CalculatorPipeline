@@ -109,7 +109,7 @@ namespace Tests
             var calc = new Calculator();
 
             //Act
-            var result = calc.Subtract();
+            var result = calc.Divide();
 
             //Assert
             Assert.AreEqual(0, result);
@@ -123,7 +123,7 @@ namespace Tests
             double[] testData = { 10, 2 };
 
             //Act
-            var result = calc.Subtract(testData);
+            var result = calc.Divide(testData);
 
             //Assert
             Assert.AreEqual(5, result);
@@ -137,7 +137,7 @@ namespace Tests
             double[] testData = { -10, -2 };
 
             //Act
-            var result = calc.Subtract(testData);
+            var result = calc.Divide(testData);
 
             //Assert
             Assert.AreEqual(5, result);
@@ -150,7 +150,7 @@ namespace Tests
             double[] testData = { 10, 2, 0 };
 
             Assert.Throws<DivideByZeroException>(() => {
-                var result = calc.Subtract(testData);
+                var result = calc.Divide(testData);
             });
         }
 
@@ -161,7 +161,7 @@ namespace Tests
             double[] testData = { 10, 2, 5, 0 };
 
             Assert.Throws<DivideByZeroException>(() => {
-                var result = calc.Subtract(testData);
+                var result = calc.Divide(testData);
             });
         }
 
