@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Services;
+using System;
 
 namespace Tests
 {
@@ -103,31 +105,64 @@ namespace Tests
         [Test]
         public void DivideNumbersWithNoInput()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+
+            //Act
+            var result = calc.Subtract();
+
+            //Assert
+            Assert.AreEqual(0, result);
         }
 
         [Test]
         public void DivideTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { 10, 2 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(5, result);
         }
 
         [Test]
         public void DivideTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            //Setup
+            var calc = new Calculator();
+            double[] testData = { -10, -2 };
+
+            //Act
+            var result = calc.Subtract(testData);
+
+            //Assert
+            Assert.AreEqual(5, result);
         }
 
         [Test]
         public void DivideTwoNumbersWithZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var calc = new Calculator();
+            double[] testData = { 10, 2, 0 };
+
+            Assert.Throws<DivideByZeroException>(() => {
+                var result = calc.Subtract(testData);
+            });
         }
 
         [Test]
         public void DivideThreeNumbersWithZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var calc = new Calculator();
+            double[] testData = { 10, 2, 5, 0 };
+
+            Assert.Throws<DivideByZeroException>(() => {
+                var result = calc.Subtract(testData);
+            });
         }
 
         [Test]
