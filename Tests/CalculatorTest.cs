@@ -62,6 +62,8 @@ namespace Tests
             var calc = new Calculator();
             double[] testData = { 2.5, 3.5 };
 
+
+
             //Act
             var result = calc.Subtract(testData);
 
