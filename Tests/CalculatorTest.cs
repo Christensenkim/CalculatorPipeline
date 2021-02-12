@@ -1,4 +1,7 @@
+using System;
+using System.Diagnostics;
 using NUnit.Framework;
+using Services;
 
 namespace Tests
 {
@@ -8,6 +11,7 @@ namespace Tests
         public void Setup()
         {
             // Initialize a shared instance of the calculator service here.
+            Calculator calc = new Calculator();
         }
 
         [Test]
@@ -133,25 +137,37 @@ namespace Tests
         [Test]
         public void FactorialOfFive()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator calc = new Calculator();
+            double result = calc.Factorial(5);
+
+            Assert.AreEqual(120, result);
         }
 
         [Test]
         public void FactorialOf200()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator calc = new Calculator();
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => calc.Factorial(200));
+
+            Assert.AreEqual("Factorial over 18 cannot be handled", ex.Message);
         }
 
         [Test]
         public void FactorialOfZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator calc = new Calculator();
+            double result = calc.Factorial(0);
+
+            Assert.AreEqual(1, result);
         }
 
         [Test]
         public void FactorialOfNegativeNumber()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            Calculator calc = new Calculator();
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => calc.Factorial(-1));
+
+            Assert.AreEqual("Factorial of minus numbers cannot be handled", ex.Message);
         }
     }
 }
